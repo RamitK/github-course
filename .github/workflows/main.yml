@@ -7,10 +7,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Get services using PowerShell
-        run: |
-          Start-Process powershell -ArgumentList "Get-Service | Format-Table -AutoSize" -Verb RunAs
-        shell: powershell
-
+        run: Get-Service | Format-Table -AutoSize
+        
   get-services-linux:
     runs-on: ubuntu-latest
     steps:
