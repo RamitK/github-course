@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Get services using PowerShell
-        run: Get-Service | Format-Table -AutoSize
+        run: Get-Service | Where-Object { $_.Status -ne 'Stopped' } | Format-Table -AutoSize
         
   get-services-linux:
     runs-on: ubuntu-latest
