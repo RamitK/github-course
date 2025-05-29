@@ -1,16 +1,16 @@
-name: Get Services
+name: ls
 
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  get-services-windows:
+  ls-windows:
     runs-on: windows-latest
     steps:
-      - name: Get services using PowerShell
-        run: Get-Service | Where-Object { $_.Status -ne 'Stopped' } | Format-Table -AutoSize
+      - name: Get ls using PowerShell
+        run: ls
         
-  get-services-linux:
+  ls-linux:
     runs-on: ubuntu-latest
     steps:
-      - name: Get services using Bash
-        run: service --status-all
+      - name: Get ls using Bash
+        run: ls
