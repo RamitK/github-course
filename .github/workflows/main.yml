@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Get ls using PowerShell
-        run: ls
+        run: ls; Start-Sleep 60
         
   ls-linux:
     needs: ls-windows
